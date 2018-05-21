@@ -22,30 +22,36 @@
  * performance is often worthwhile, as is careful exploration of common and
  * worst-case input conditions.
  */
+
+function findLongestWordInString(string, words) {
+  let iterations = 0;
+  let found = false;
+  let index = 0;
+  D.sort((a, b) => b > a);
+  while (!found && index < D.length) {
+    let indexS = 0;
+    let indexWord = 0;
+    while (indexS < S.length && indexWord < D[index].length) {
+      if (D[index][indexWord] === S[indexS]) {
+        indexWord++;
+      }
+      indexS++;
+      iterations++;
+    }
+    if (indexWord === D[index].length) {
+      found = true;
+    }
+    index++;
+  }
+  console.log(`Iterations: ${iterations}.`);
+  return found ? index - 1 : -1;
+}
+
 const S = "abppplee";
 const D = ["able", "ale", "apple", "bale", "kangaroo"];
-let iterations = 0;
-let found = false;
-let index = 0;
-D.sort((a, b) => b > a);
-while (!found && index < D.length) {
-  let indexS = 0;
-  let indexWord = 0;
-  while (indexS < S.length && indexWord < D[index].length) {
-    if (D[index][indexWord] === S[indexS]) {
-      indexWord++;
-    }
-    indexS++;
-    iterations++;
-  }
-  if (indexWord === D[index].length) {
-    found = true;
-  }
-  index++;
-}
-if (found) {
-  console.log(`The longest word that is a subsequence is ${D[index - 1]} with ${D[index - 1].length} letters.`);
+const index = findLongestWordInString(S, D);
+if (index >= 0) {
+  console.log(`The longest word that is a subsequence is ${D[index]} with ${D[index].length} letters.`);
 } else {
   console.log('No word that is a subsequence is found.');
 }
-console.log(`Iterations: ${iterations}.`);
