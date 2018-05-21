@@ -24,23 +24,28 @@
  */
 const S = "abppplee";
 const D = ["able", "ale", "apple", "bale", "kangaroo"];
-let longestLength = 0;
-let longestWord = "";
 let iterations = 0;
-for (let word of D) {
+let found = false;
+let index = 0;
+D.sort((a, b) => b > a);
+while (!found && index < D.length) {
   let indexS = 0;
   let indexWord = 0;
-  while (indexS < S.length && indexWord < word.length) {
-    if (word[indexWord] === S[indexS]) {
+  while (indexS < S.length && indexWord < D[index].length) {
+    if (D[index][indexWord] === S[indexS]) {
       indexWord++;
     }
     indexS++;
     iterations++;
   }
-  if (indexWord === word.length && word.length > longestLength) {
-    longestWord = word;
-    longestLength = word.length;
+  if (indexWord === D[index].length) {
+    found = true;
   }
+  index++;
 }
-console.log(`The longest word that is a subsequence is ${longestWord} with ${longestLength} letters.`);
+if (found) {
+  console.log(`The longest word that is a subsequence is ${D[index - 1]} with ${D[index - 1].length} letters.`);
+} else {
+  console.log('No word that is a subsequence is found.');
+}
 console.log(`Iterations: ${iterations}.`);
