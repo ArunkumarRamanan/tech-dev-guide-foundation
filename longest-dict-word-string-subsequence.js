@@ -26,6 +26,7 @@ const S = "abppplee";
 const D = ["able", "ale", "apple", "bale", "kangaroo"];
 let longestLength = 0;
 let longestWord = "";
+let iterations = 0;
 for (let word of D) {
   let indexS = 0;
   let indexWord = 0;
@@ -34,6 +35,7 @@ for (let word of D) {
       indexWord++;
     }
     indexS++;
+    iterations++;
   }
   if (indexWord === word.length && word.length > longestLength) {
     longestWord = word;
@@ -41,3 +43,4 @@ for (let word of D) {
   }
 }
 console.log(`The longest word that is a subsequence is ${longestWord} with ${longestLength} letters.`);
+console.log(`Iterations: ${iterations}.`);
