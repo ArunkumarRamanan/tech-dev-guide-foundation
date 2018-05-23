@@ -1,3 +1,6 @@
+/**
+ * https://techdevguide.withgoogle.com/paths/foundational/using-arrays-in-java-intro-no-worries
+ */
 class Main {
     public static void main(String[] args) {
         // Initialization

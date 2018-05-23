@@ -1,4 +1,6 @@
 /**
+ * https://techdevguide.withgoogle.com/paths/foundational/stringsplosion-problem-ccocodcode/#!
+ *
  * Given a non-empty string like "Code" return a string like "CCoCodCode".
  *
  * stringSplosion("Code") → "CCoCodCode"

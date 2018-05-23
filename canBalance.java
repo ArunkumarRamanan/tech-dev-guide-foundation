@@ -1,4 +1,6 @@
 /**
+ * https://techdevguide.withgoogle.com/paths/foundational/canbalance-problem-arrays-non-empty/
+ *
  * Given a non-empty array, return true if there is a place to split the array
  * so that the sum of the numbers on one side is equal to the sum of the numbers
  * on the other side.

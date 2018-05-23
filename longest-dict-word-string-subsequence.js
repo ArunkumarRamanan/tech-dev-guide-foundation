@@ -1,4 +1,6 @@
 /**
+ * https://techdevguide.withgoogle.com/paths/foundational/find-longest-word-in-dictionary-that-subsequence-of-given-string/#!
+ *
  * Given a string S and a set of words D, find the longest word in D that is a
  * subsequence of S.
  *

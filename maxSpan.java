@@ -1,4 +1,6 @@
 /**
+ * https://techdevguide.withgoogle.com/paths/foundational/maxspan-problem-return-largest-span-array/#!
+ *
  * Consider the leftmost and righmost appearances of some value in an array.
  * We'll say that the "span" is the number of elements between the two inclusive.
  * A single value has a span of 1.
